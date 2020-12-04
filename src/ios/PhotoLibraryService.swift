@@ -723,10 +723,10 @@ final class PhotoLibraryService {
         var mimeType: String?
 
         if (imageHasAlpha(image)){
-            data = UIImage.pngData(image)
+            data = image.pngData()
             mimeType = data != nil ? "image/png" : nil
         } else {
-            data = UIImage.jpegData(image, CGFloat(quality))
+            data = image.jpegData(CGFloat(quality))
             mimeType = data != nil ? "image/jpeg" : nil
         }
 
